@@ -6,7 +6,7 @@
 #    By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:58:40 by lgirault          #+#    #+#              #
-#    Updated: 2023/01/19 12:07:19 by lgirault         ###   ########.fr        #
+#    Updated: 2023/01/30 10:48:41 by lgirault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ SRC =		ft_memcpy.c \
 	ft_memmove.c \
 	ft_strlcpy.c \
 	ft_strrchr.c \
-	ft_atoi.c \
 	ft_isascii.c \
 	ft_memchr.c \
 	ft_memset.c \

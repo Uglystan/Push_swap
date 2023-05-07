@@ -6,31 +6,22 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:15:02 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 17:25:46 by lgirault         ###   ########.fr       */
+/*   Updated: 2023/01/31 14:46:17 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check(t_pile *pileA)
+int	check(t_pile **pileA)
 {
 	int	check;
 
-	check = check_arg_double(pileA);
-	if (check == 0)
+	check = check_arg_double((*pileA));
+	if (check == 0 || check == 2 || check == 3)
 	{
 		write(2, "Error\n", 6);
-		return (0);
-	}
-	if (check == 2)
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
-	if (check == 3)
-	{
-		write(2, "Error\n", 6);
-		return (0);
+		lstclear(pileA);
+		exit(EXIT_FAILURE);
 	}
 	return (1);
 }

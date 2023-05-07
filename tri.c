@@ -6,7 +6,7 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:52:21 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 17:52:10 by lgirault         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:19:28 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	tri_5(t_pile **pileA, t_pile **pileB)
 	while (lstsize((*pileA)) != 3)
 	{
 		if ((*pileA)->index == ind_le_plus_petit(*pileA))
-			push_b(pileA, pileB);
+			push_b(pileA, pileB, 0);
 		if (better_play_ind_min(*pileA) == 1)
 			rev_rot_a(pileA, 0);
 		else
@@ -53,8 +53,8 @@ void	tri_5(t_pile **pileA, t_pile **pileB)
 	tri_3(pileA);
 	if (lstsize(*pileA) == 2 && (*pileB)->index > (*pileB)->next->index)
 		swap_b(pileB, 0);
-	push_a(pileB, pileA);
-	push_a(pileB, pileA);
+	push_a(pileB, pileA, 0);
+	push_a(pileB, pileA, 0);
 }
 
 int	already_tri(t_pile *pileA)
@@ -75,7 +75,8 @@ void	tri_fin(t_pile **pileA, t_pile **pileB)
 
 	ind = lstsize(*pileA);
 	tri_fin_push_b(pileA, pileB, ind);
-	size = lstsize(*pileB);
+	tri_3(pileA);
+	size = lstsize(*pileB) + 3;
 	tri_fin_push_a(pileA, pileB, size);
 }
 

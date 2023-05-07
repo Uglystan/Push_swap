@@ -6,29 +6,11 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 17:08:48 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 17:39:10 by lgirault         ###   ########.fr       */
+/*   Updated: 2023/02/01 11:03:23 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	pos_list(t_pile *pile, int index)
-{
-	int	size;
-	int	i;
-
-	size = lstsize(pile);
-	i = 0;
-	while (pile->index != index)
-	{
-		i++;
-		pile = pile->next;
-	}
-	if (i > size / 2)
-		return (1);
-	else
-		return (2);
-}
 
 int	verif_pile(t_pile *pile, int limit)
 {
@@ -71,4 +53,40 @@ int	ind_le_plus_petit(t_pile *pile)
 		pile = pile->next;
 	}
 	return (i);
+}
+
+void	free_pile(t_pile **pile)
+{
+	write(2, "Error\n", 6);
+	lstclear(pile);
+	exit(EXIT_FAILURE);
+}
+
+long long	ft_atoi(const char *nptr, t_pile **pile)
+{
+	int			i;
+	int			neg;
+	long long	ret;
+	long long	old_ret;
+
+	i = 0;
+	ret = 0;
+	neg = 1;
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == 45 || nptr[i] == 43)
+	{
+		if (nptr[i] == 45)
+			neg = neg * (-1);
+		i++;
+	}
+	while (nptr[i] != '\0' && (nptr[i] >= 48 && nptr[i] <= 57))
+	{
+		old_ret = ret;
+		ret = ret * 10 + (nptr[i] - 48);
+		if (ret < old_ret)
+			free_pile(pile);
+		i++;
+	}
+	return (ret * neg);
 }

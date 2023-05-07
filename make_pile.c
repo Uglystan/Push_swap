@@ -6,7 +6,7 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:25:52 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 17:30:46 by lgirault         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:01:16 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ t_pile	*make_pile(char **argv)
 	t_pile	*temp;
 
 	j = 2;
-	pile_a = lstnew(ft_atoi(argv[1]), 0);
+	pile_a = lstnew(ft_atoi(argv[1], &pile_a), 0);
 	if (pile_a == NULL)
 		return (NULL);
 	while (argv[j] != NULL)
 	{
-		temp = lstnew(ft_atoi(argv[j]), 0);
+		temp = lstnew(ft_atoi(argv[j], &pile_a), 0);
 		if (temp == NULL)
 		{
 			lstclear(&pile_a);
-			return (NULL);
+			exit(EXIT_FAILURE);
 		}
 		lstadd_back(&pile_a, temp);
 		j++;

@@ -6,7 +6,7 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:51:35 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 18:00:12 by lgirault         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:16:50 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ void	tri_fin_push_a(t_pile **pileA, t_pile **pileB, int size)
 					|| (check_last_ind((*pileA)) == size))
 				&& lstsize(*pileB) != 0)
 			{
-				push_a(pileB, pileA);
+				push_a(pileB, pileA, 0);
 				rotate_a(pileA, 0);
 			}
 			if ((*pileB)->index == ind && lstsize(*pileB) != 0)
-				push_a(pileB, pileA);
+				push_a(pileB, pileA, 0);
 			else if (lstsize(*pileB) != 0)
 				coup_rb_ou_rrb(pileB);
 			while (lstsize(*pileA) >= 2

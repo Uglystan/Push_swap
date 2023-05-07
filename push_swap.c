@@ -6,21 +6,12 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 18:11:33 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 17:31:45 by lgirault         ###   ########.fr       */
+/*   Updated: 2023/01/31 14:45:15 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-void	print_pile(t_pile *pile)
-{
-	while (pile != NULL)
-	{
-		printf("nbr = %lld et index = %d\n", pile->content, pile->index);
-		pile = pile->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -33,15 +24,11 @@ int	main(int argc, char **argv)
 		if (check_arg_nbr(argv) == 0)
 		{
 			write(2, "Error\n", 6);
-			return (0);
+			exit(EXIT_FAILURE);
 		}
 		pile_a = make_pile(argv);
 		index_pile(&pile_a);
-		if (check(pile_a) == 0)
-		{
-			lstclear(&pile_a);
-			return (0);
-		}
+		check(&pile_a);
 		tri(&pile_a, &pile_b);
 		lstclear(&pile_a);
 		lstclear(&pile_b);
@@ -49,4 +36,5 @@ int	main(int argc, char **argv)
 	else
 		return (0);
 }
-//modifier atoi protecton overflow
+
+//sortie d'erreur pour les erreurs

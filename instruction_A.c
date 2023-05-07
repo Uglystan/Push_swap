@@ -6,7 +6,7 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:50:14 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 17:28:09 by lgirault         ###   ########.fr       */
+/*   Updated: 2023/01/31 16:34:11 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int	swap_a(t_pile **pileA, int ind)
 	return (1);
 }
 
-int	push_a(t_pile **pile_pushB, t_pile **pile_destA)
+int	push_a(t_pile **pile_pushB, t_pile **pile_destA, int ind)
 {
 	t_pile	*temp;
 
 	if (lstsize(*pile_pushB) == 0)
-		return (0);
+		return (1);
 	if (*pile_destA == NULL || lstsize(*pile_destA) == 0)
 	{
 		(*pile_destA) = lstnew((*pile_pushB)->content, (*pile_pushB)->index);
@@ -49,7 +49,8 @@ int	push_a(t_pile **pile_pushB, t_pile **pile_destA)
 		*pile_pushB = (*pile_pushB)->next;
 		(*pile_destA)->next = temp;
 	}
-	ft_printf("pa\n");
+	if (ind == 0)
+		ft_printf("pa\n");
 	return (1);
 }
 
@@ -59,7 +60,7 @@ int	rotate_a(t_pile **pileA, int ind)
 	t_pile	*second;
 
 	if (lstsize((*pileA)) <= 1)
-		return (0);
+		return (1);
 	first = *pileA;
 	second = (*pileA)->next;
 	(*pileA) = (*pileA)->next;
@@ -81,7 +82,7 @@ int	rev_rot_a(t_pile **pileA, int ind)
 	t_pile	*der;
 
 	if (lstsize((*pileA)) <= 1)
-		return (0);
+		return (1);
 	temp = *pileA;
 	while ((*pileA)->next->next != NULL)
 	{
