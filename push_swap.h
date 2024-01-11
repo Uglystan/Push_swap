@@ -6,7 +6,7 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 18:03:13 by lgirault          #+#    #+#             */
-/*   Updated: 2023/02/02 10:52:46 by lgirault         ###   ########.fr       */
+/*   Updated: 2024/01/10 21:41:53 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include "./libft_tot/libft.h"
 
+// Une pile se compose de un index, un nombre et un pointeur sur l'element suivant de la pile. L'index est utile pour savoir ou se situe le nombre par rapport aux autres
+// exemple 290 340 2 100 les index seront respectivement 3 4 1 2 donc je saurais que si j'ai 2 c'est mon premier nombre cela evite de chercher si il en existe un plus petit ou non
+// le content c'est le nombre en lui meme
 typedef struct s_pile
 {
 	int				index;

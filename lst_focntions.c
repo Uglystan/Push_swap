@@ -6,12 +6,12 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:14:37 by lgirault          #+#    #+#             */
-/*   Updated: 2023/01/28 17:28:52 by lgirault         ###   ########.fr       */
+/*   Updated: 2024/01/10 21:59:33 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+//On va a la fin de la liste et on fait pointer le dernier maillon sur le new et new de base pointe sur null donc tout ok
 void	lstadd_back(t_pile **lst, t_pile *new)
 {
 	t_pile	*ptr;
@@ -41,6 +41,7 @@ void	lstadd_front(t_pile **lst, t_pile *new)
 	}
 }
 
+//On parcourt toute la liste et on met le maillon suivant dans save et on free le maillon actuel on va au suivant grace au save et ainsi de suite
 void	lstclear(t_pile **lst)
 {
 	t_pile	*save;
@@ -55,7 +56,7 @@ void	lstclear(t_pile **lst)
 		}
 	}
 }
-
+//On creer un nouveau maillon on va mettre le content au meme nombre que l'argument et pour l'instant l'index a 0 on s'occupe des indexs plus tard
 t_pile	*lstnew(long long nbr, int index)
 {
 	t_pile	*a;
@@ -68,7 +69,7 @@ t_pile	*lstnew(long long nbr, int index)
 	a->next = NULL;
 	return (a);
 }
-
+//Parcourt toute la pile jusqu'a la fin a chaque fois incremente i et retourne i donc i = taille pile
 int	lstsize(t_pile *lst)
 {
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 17:08:48 by lgirault          #+#    #+#             */
-/*   Updated: 2023/02/01 11:03:23 by lgirault         ###   ########.fr       */
+/*   Updated: 2024/01/10 22:38:04 by lgirault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	verif_pile(t_pile *pile, int limit)
 	}
 	return (1);
 }
-
+//Prend une pile et retourne un l'index le plus grand de cette pile
 int	ind_le_plus_grand(t_pile *pile)
 {
 	int	i;
@@ -40,7 +40,7 @@ int	ind_le_plus_grand(t_pile *pile)
 	}
 	return (i);
 }
-
+//Prend une pile et retourne un l'index le plus petit de cette pile
 int	ind_le_plus_petit(t_pile *pile)
 {
 	int	i;
@@ -62,6 +62,7 @@ void	free_pile(t_pile **pile)
 	exit(EXIT_FAILURE);
 }
 
+//atoi no overflow si le nombre apres avoir ajouter un chiffre est plus petit ou egal c'est qu'il y'a eu overflow et on appel free_pile qui retourne une erreur et free ce qu'il faut
 long long	ft_atoi(const char *nptr, t_pile **pile)
 {
 	int			i;
