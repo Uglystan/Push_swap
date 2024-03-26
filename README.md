@@ -46,5 +46,9 @@ Pour une taille de 5, je déplace les 2 plus petits dans la pile_B et ensuite j'
 
 Je met en place des indices sur les valeurs et ensuite je travail uniquement avec les indices je met dans la pile_B les 28 plus petits nombres. J'analyse ma pile_A pour savoir si il est plus judicieux pour avoir un nombre de faire rra ou ra. Dans ses 28 je met les 14 plus petits en dessous des 14 plus grand a chaque fois que je dois changer la position d'un nombre dans la pile_B je verifie dans ma pile_A si je vais devoir faire la meme action aucquels cas j'utilise les actions rr ou rrr. Je fais ca jusqu'a avoir 3 nombres dans ma pile_A
 
-![Screenshot from 2024-03-26 16-53-51](https://github.com/Uglystan/Push_swap/assets/117684814/afa0e53e-b164-4716-88a5-5a70494a6b01)
+![Screenshot from 2024-03-26 17-23-51](https://github.com/Uglystan/Push_swap/assets/117684814/19125a29-a099-4466-8dda-e4d2dbc6f83d)
 
+#### Etape 2 :
+Ensuite je vais remettre les nombre dans la pile_A. Donc je vais chercher le nom qui va juste au dessus de ma pile pour qu'elle soit directement triee. Je regarde si le moyen le plus efficace d'y arriver entre rb ou rrb et pendant que je defile sur chaque nombre qui passe en haut de ma pile_B je regarde si il est plus petit que le nombre que je cherche si c'est le cas je le bascule dans la pile_A et je le met en dessous de la pile si le contexte le permet. Je fais ca pour chaque nombre qui va passer en haut de la pile_B tant que je n'ai pas atteint le nombre que je recherchais. (A partir du moment ou il y'a un nombre en dessous de la pile_A je ne place plus que des nombres plus grand que le dernier nombre a la fin de la pile_A)
+
+![Screenshot from 2024-03-26 18-21-04](https://github.com/Uglystan/Push_swap/assets/117684814/9409c0d5-4405-4d23-adf0-dd8b861c55c6)
