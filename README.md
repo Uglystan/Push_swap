@@ -53,6 +53,7 @@ Ensuite je vais remettre les nombre dans la pile_A. Donc je vais chercher le nom
 
 ![Screenshot from 2024-03-26 18-21-04](https://github.com/Uglystan/Push_swap/assets/117684814/9409c0d5-4405-4d23-adf0-dd8b861c55c6)
 
+## Sequence complete
 
 https://github.com/Uglystan/Push_swap/assets/117684814/59fdf82a-941d-463d-b255-0fa42b2a40c2
 
