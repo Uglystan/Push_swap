@@ -33,7 +33,7 @@ On dispose d'un set de valeurs (int), de 2 stacks (pile_A et pile_B). La pile_A 
 Pour résoudre ce problème, j'ai découpé en plusieurs parties en fonction de la taille du set.
 
 ### Set de 1 à 3
-Pour une taille de 3, j'ai chaque cas en dur.
+Pour une taille de 3, j'ai fait au cas par cas.
 
 ### Set de 4 à 5
 Pour une taille de 5, je déplace les 2 plus petits dans la pile_B et ensuite j'utilise mon tri pour 3 valeurs et si nécessaire j'inverse dans la pile_B les 2 valeurs avant de les remettre.
