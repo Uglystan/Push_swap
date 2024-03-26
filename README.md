@@ -58,3 +58,5 @@ Ensuite je vais remettre les nombres dans la pile_A. Donc je vais chercher le no
 https://github.com/Uglystan/Push_swap/assets/117684814/59fdf82a-941d-463d-b255-0fa42b2a40c2
 
 
+Credit : https://github.com/o-reo/push_swap_visualizer
+
